@@ -4,7 +4,6 @@ class DisplayComponent extends React.Component {
 
     render() {
         let {display} = this.props;
-        console.log(this.props);
         return (
             <div className="display">
                 <p>{display}</p>
