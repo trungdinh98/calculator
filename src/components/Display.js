@@ -1,6 +1,6 @@
 import React from 'react';
 
-class DisplayComponent extends React.Component {
+class Display extends React.Component {
 
     render() {
         let {display} = this.props;
@@ -8,9 +8,8 @@ class DisplayComponent extends React.Component {
             <div className="display">
                 <p>{display}</p>
             </div>
-    )
-        ;
+        );
     }
 }
 
-export default DisplayComponent;
+export default Display;

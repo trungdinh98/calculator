@@ -1,8 +1,9 @@
+/*eslint-disable no-eval */
 import React from 'react';
 import './App.css';
 import Welcome from './Welcome.js';
-import KeypadComponent from './components/Keypad.js';
-import DisplayComponent from './components/Display.js';
+import Keypad from './components/Keypad.js';
+import Display from './components/Display.js';
 
 class App extends React.Component {
 
@@ -13,12 +14,12 @@ class App extends React.Component {
     };
   };
 
-  onClick = button => {
+  clickKeypad = button => {
     if (button === "=") {
-      this.calculate();
+      this.calc();
     }
     else if (button === "AC") {
-      this.reset();
+      this.allclear();
     }
     else {
       this.setState({
@@ -27,7 +28,7 @@ class App extends React.Component {
     }
   };
 
-  calculate = () => {
+  calc = () => {
     var checkResult = '';
     if (this.state.result.includes('--')) {
       checkResult = this.state.result.replace('--','+');
@@ -41,12 +42,12 @@ class App extends React.Component {
       });
     } catch (e) {
       this.setState({
-          result: "error"
+        result: "error"
       });
     }
   };
 
-  reset = () => {
+  allclear = () => {
     this.setState({
       result: ""
     });
@@ -56,8 +57,8 @@ class App extends React.Component {
     return (
       <div className="calculator-body">
         <Welcome name="Someone"/>
-        <DisplayComponent display={this.state.result}/>
-        <KeypadComponent onClick={this.onClick}/>
+        <Display display={this.state.result}/>
+        <Keypad onClick={this.clickKeypad}/>
       </div>
     );
   }
