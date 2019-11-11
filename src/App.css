@@ -19,7 +19,6 @@
   margin: 5px;
   color: #fff;
   text-align: right;
-
 }
 
 .calculator-body {
@@ -51,9 +50,11 @@ button {
   margin: 5px;
   font-size: 30px;
 }
+
 .calculate {
   background-color: #fb9328;
 }
+
 .topbutton {
   background-color: #a3a3a3;
   color: #000;
